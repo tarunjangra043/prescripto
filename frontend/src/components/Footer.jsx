@@ -1,6 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -30,10 +30,18 @@ const Footer = () => {
         <div>
           <p className="text-xl font-medium mb-5">COMPANY</p>
           <ul className="flex flex-col gap-2 text-gray-600">
-            <li>Home</li>
-            <li>About us</li>
-            <li>Delivery</li>
-            <li>Privacy policy</li>
+            <NavLink onClick={() => scrollTo(0, 0)} to="/">
+              <li>Home</li>
+            </NavLink>
+            <NavLink onClick={() => scrollTo(0, 0)} to="/about">
+              <li>About us</li>
+            </NavLink>
+            <NavLink onClick={() => scrollTo(0, 0)} to="/">
+              <li>Delivery</li>
+            </NavLink>
+            <NavLink onClick={() => scrollTo(0, 0)} to="/">
+              <li>Privacy policy</li>
+            </NavLink>
           </ul>
         </div>
 
