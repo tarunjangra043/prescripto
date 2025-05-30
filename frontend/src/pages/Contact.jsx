@@ -19,12 +19,12 @@ const Contact = () => {
         <div className="flex flex-col justify-center items-start gap-6">
           <p className="font-semibold tex-lg text-gray-600">OUR OFFICE</p>
           <p className="text-gray-500">
-            00000 Willms Station
+            Wz-234 Gali No. 5
             <br />
-            Suite 000, Washington, USA
+            Rewari, Haryana
           </p>
           <p className="text-gray-500">
-            Tel: (000) 000-0000 <br /> Email: greatstackdev@gmail.com
+            Tel: +919350256027 <br /> Email: tarunjangra043@gmail.com
           </p>
           <p className="font-semibold text-lg text-gray-600">
             CAREERS AT PRESCRIPTO
