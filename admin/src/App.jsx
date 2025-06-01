@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { AdminContext } from "./context/AdminContext";
-import Navbar from "./components/NavBar.jsx";
+import NavBar from "./components/NavBar.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Admin/Dashboard.jsx";
@@ -17,7 +17,7 @@ const App = () => {
   return aToken ? (
     <div className="bg-[#F8F9FD]">
       <ToastContainer />
-      <Navbar />
+      <NavBar />
       <div className="flex items-start">
         <Sidebar />
         <Routes>

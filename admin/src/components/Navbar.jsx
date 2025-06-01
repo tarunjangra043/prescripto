@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AdminContext } from "../context/AdminContext";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const NavBar = () => {
   const { aToken, setAToken } = useContext(AdminContext);
 
   const navigate = useNavigate();
@@ -37,4 +37,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
