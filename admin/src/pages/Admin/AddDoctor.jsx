@@ -51,7 +51,7 @@ const AddDoctor = () => {
       });
 
       const { data } = await axios.post(
-        backendUrl + "/api/admin/add-doctor",
+        backendUrl + "api/admin/add-doctor",
         formData,
         { headers: { aToken } }
       );
@@ -71,7 +71,7 @@ const AddDoctor = () => {
         toast.error(data.message);
       }
     } catch (e) {
-      toast.error(error.message);
+      toast.error(e.message);
       console.log(error);
     }
   };

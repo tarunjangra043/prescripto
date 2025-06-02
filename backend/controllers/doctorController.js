@@ -1,6 +1,9 @@
+import doctorModel from "../models/doctorModel.js";
+
 const changeAvailability = async (req, res) => {
   try {
     const { docId } = req.body;
+    console.log("Changing availability for doctor ID:", docId);
 
     const docData = await doctorModel.findById(docId);
     await doctorModel.findByIdAndUpdate(docId, {
