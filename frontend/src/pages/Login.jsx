@@ -1,13 +1,49 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const { backendUrl, token, setToken } = useContext(AppContext);
+
   const [state, setState] = useState("Sign Up");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
+
+    try {
+      if (state === "Sign Up") {
+        const { data } = await axios.post(backendUrl + "api/user/signup", {
+          name,
+          email,
+          password,
+        });
+
+        if (data.success) {
+          localStorage.setItem("token", data.token);
+          setToken(data.token);
+        } else {
+          toast.error(data.message);
+        }
+      } else {
+        const { data } = await axios.post(backendUrl + "api/user/login", {
+          email,
+          password,
+        });
+
+        if (data.success) {
+          localStorage.setItem("token", data.token);
+          setToken(data.token);
+        } else {
+          toast.error(data.message);
+        }
+      }
+    } catch (e) {
+      toast.error(e.message);
+    }
   };
 
   return (
@@ -59,7 +95,10 @@ const Login = () => {
           />
         </div>
 
-        <button className="bg-[#5f6FFF] text-white w-full py-2 rounded-md text-base">
+        <button
+          type="submit"
+          className="bg-[#5f6FFF] text-white w-full py-2 rounded-md text-base"
+        >
           {state === "Sign Up" ? "Create Account" : "Login"}
         </button>
 
