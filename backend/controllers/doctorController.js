@@ -26,8 +26,8 @@ const doctorList = async (req, res) => {
 
     res.json({ success: true, doctors });
   } catch (e) {
-    console.error(error);
-    res.status(500).json({ success: false, message: error.message });
+    console.error(e);
+    res.status(500).json({ success: false, message: e.message });
   }
 };
 
