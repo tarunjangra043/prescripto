@@ -122,7 +122,7 @@ const allDoctors = async (req, res) => {
 // API to get all appointments list
 const appointmentsAdmin = async (req, res) => {
   try {
-    const appointments = appointmentModel.find({});
+    const appointments = await appointmentModel.find({});
 
     res.json({
       success: true,
