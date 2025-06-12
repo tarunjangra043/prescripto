@@ -9,8 +9,6 @@ const MyAppointments = () => {
   const { backendUrl, token, getDoctorsData } = useContext(AppContext);
   const [appointments, setAppointments] = useState([]);
 
-  const navigate = useNavigate();
-
   const months = [
     "",
     "Jan",
@@ -31,6 +29,8 @@ const MyAppointments = () => {
     const dateArray = slotDate.split("_");
     return `${dateArray[0]} ${months[Number(dateArray[1])]} ${dateArray[2]}`;
   };
+
+  const navigate = useNavigate();
 
   const getUserAppointments = async () => {
     try {
